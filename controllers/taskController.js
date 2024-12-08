@@ -1,7 +1,7 @@
 const Task = require("../models/task");
 const Joi = require("joi");
 
-// Validation Schema
+// Validation Schema Using Joi
 const validateTask = (data) => {
   const schema = Joi.object({
     title: Joi.string().required().max(100),
@@ -21,7 +21,7 @@ exports.createTask = async (req, res, next) => {
 
     const task = new Task(req.body);
     const savedTask = await task.save();
-    res.status(201).json(savedTask);
+    res.status(201).json({savedTask, message: "Task uploaded successfully"});
   } catch (err) {
     next(err);
   }
@@ -66,8 +66,8 @@ exports.updateTask = async (req, res, next) => {
     if (error) return res.status(400).json({ message: error.details[0].message });
 
     const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body, {
-      new: true, // Return updated document
-      runValidators: true, // Run schema validation
+      new: true, 
+      runValidators: true,
     });
 
     if (!updatedTask) return res.status(404).json({ message: "Task not found" });
