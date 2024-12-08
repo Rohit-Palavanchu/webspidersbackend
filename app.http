@@ -1,0 +1,38 @@
+### Create a Task
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "title": "Complete Node.js Assignment",
+  "description": "Finish writing code for the task management API.",
+  "status": "TODO",
+  "priority": "HIGH",
+  "dueDate": "2024-12-31"
+}
+
+
+
+### Get All Tasks
+GET http://localhost:3000/tasks
+Content-Type: application/json
+
+
+### Get Task by ID
+GET http://localhost:3000/tasks/67540bbe05a26acee5945501
+Content-Type: application/json
+
+
+### Update a Task
+PUT http://localhost:3000/tasks/67540bbe05a26acee5945501
+Content-Type: application/json
+
+{
+  "title": "Update Task Title",
+  "status": "IN_PROGRESS",
+  "priority": "MEDIUM"
+}
+
+
+### Delete a Task
+DELETE http://localhost:3000/tasks/67540baa05a26acee59454f7
+Content-Type: application/json
