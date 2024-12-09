@@ -18,21 +18,21 @@ Content-Type: application/json
 
 
 ### Get Task by ID
-GET http://localhost:3000/tasks/67540bbe05a26acee5945501
+GET http://localhost:3000/tasks/67551d6ff74f349566492e79
 Content-Type: application/json
 
 
 ### Update a Task
-PUT http://localhost:3000/tasks/67540bbe05a26acee5945501
+PUT http://localhost:3000/tasks/67551d6ff74f349566492e78
 Content-Type: application/json
 
 {
   "title": "Update Task Title",
   "status": "IN_PROGRESS",
-  "priority": "MEDIUM"
+  "priority": "HIGH"
 }
 
 
 ### Delete a Task
-DELETE http://localhost:3000/tasks/67540baa05a26acee59454f7
+DELETE http://localhost:3000/tasks/67551d6ff74f349566492e78
 Content-Type: application/json
